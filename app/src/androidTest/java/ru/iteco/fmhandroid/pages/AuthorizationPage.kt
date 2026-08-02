@@ -13,7 +13,8 @@ import androidx.test.espresso.matcher.ViewMatchers.withId
 import org.hamcrest.Matchers.allOf
 import ru.iteco.fmhandroid.R
 import ru.iteco.fmhandroid.utils.waitForView
-
+import androidx.test.espresso.matcher.RootMatchers.isPlatformPopup
+import androidx.test.espresso.matcher.ViewMatchers.withText
 class AuthorizationPage {
 
     private val loginField = allOf(
@@ -29,6 +30,12 @@ class AuthorizationPage {
     private val enterButton = withId(R.id.enter_button)
 
     private val mainScreen = withId(R.id.main_swipe_refresh)
+
+    private val authorizationButton =
+        withId(R.id.authorization_image_button)
+
+    private val logoutButton =
+        withText("Log out")
 
     fun checkAuthorizationScreen() {
         waitForView(enterButton)
@@ -75,6 +82,21 @@ class AuthorizationPage {
             .check(matches(isDisplayed()))
 
         onView(passwordField)
+            .check(matches(isDisplayed()))
+    }
+    fun logout() {
+        onView(authorizationButton)
+            .perform(click())
+
+        onView(logoutButton)
+            .inRoot(isPlatformPopup())
+            .perform(click())
+    }
+
+    fun checkAuthorizationScreenIsOpened() {
+        waitForView(enterButton)
+
+        onView(enterButton)
             .check(matches(isDisplayed()))
     }
 }

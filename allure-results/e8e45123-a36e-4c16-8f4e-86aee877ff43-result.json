@@ -1,0 +1,61 @@
+{
+    "name": "deleteNews",
+    "start": 1785669303219,
+    "stop": 1785669317050,
+    "stage": "finished",
+    "description": "Проверка удаления новости",
+    "descriptionHtml": null,
+    "status": "passed",
+    "statusDetails": null,
+    "steps": [
+    ],
+    "attachments": [
+    ],
+    "parameters": [
+    ],
+    "uuid": "e8e45123-a36e-4c16-8f4e-86aee877ff43",
+    "historyId": "234175e80d65cc04b8a4b7162ea5b3ed",
+    "fullName": "ru.iteco.fmhandroid.test.NewsTest.deleteNews",
+    "labels": [
+        {
+            "name": "package",
+            "value": "ru.iteco.fmhandroid.test"
+        },
+        {
+            "name": "testClass",
+            "value": "ru.iteco.fmhandroid.test.NewsTest"
+        },
+        {
+            "name": "testMethod",
+            "value": "deleteNews"
+        },
+        {
+            "name": "suite",
+            "value": "ru.iteco.fmhandroid.test.NewsTest"
+        },
+        {
+            "name": "host",
+            "value": "localhost"
+        },
+        {
+            "name": "thread",
+            "value": "Instr: io.qameta.allure.android.runners.AllureAndroidJUnitRunner(1043)"
+        },
+        {
+            "name": "framework",
+            "value": "junit4"
+        },
+        {
+            "name": "language",
+            "value": "kotlin"
+        },
+        {
+            "name": "story",
+            "value": "Управление новостями"
+        },
+        {
+            "name": "feature",
+            "value": "Новости"
+        }
+    ]
+}

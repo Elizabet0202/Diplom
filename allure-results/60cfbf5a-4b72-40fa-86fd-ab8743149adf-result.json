@@ -1,0 +1,61 @@
+{
+    "name": "logoutFromAccount",
+    "start": 1785669086647,
+    "stop": 1785669094447,
+    "stage": "finished",
+    "description": "Проверка успешного выхода пользователя из приложения",
+    "descriptionHtml": null,
+    "status": "passed",
+    "statusDetails": null,
+    "steps": [
+    ],
+    "attachments": [
+    ],
+    "parameters": [
+    ],
+    "uuid": "60cfbf5a-4b72-40fa-86fd-ab8743149adf",
+    "historyId": "b36186ff7ae50685941286f7b31f47a5",
+    "fullName": "ru.iteco.fmhandroid.test.AuthorizationTest.logoutFromAccount",
+    "labels": [
+        {
+            "name": "package",
+            "value": "ru.iteco.fmhandroid.test"
+        },
+        {
+            "name": "testClass",
+            "value": "ru.iteco.fmhandroid.test.AuthorizationTest"
+        },
+        {
+            "name": "testMethod",
+            "value": "logoutFromAccount"
+        },
+        {
+            "name": "suite",
+            "value": "ru.iteco.fmhandroid.test.AuthorizationTest"
+        },
+        {
+            "name": "host",
+            "value": "localhost"
+        },
+        {
+            "name": "thread",
+            "value": "Instr: io.qameta.allure.android.runners.AllureAndroidJUnitRunner(943)"
+        },
+        {
+            "name": "framework",
+            "value": "junit4"
+        },
+        {
+            "name": "language",
+            "value": "kotlin"
+        },
+        {
+            "name": "story",
+            "value": "Выход из аккаунта"
+        },
+        {
+            "name": "feature",
+            "value": "Авторизация"
+        }
+    ]
+}

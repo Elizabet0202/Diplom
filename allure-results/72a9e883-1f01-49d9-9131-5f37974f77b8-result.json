@@ -1,0 +1,61 @@
+{
+    "name": "sideMenuNavigation",
+    "start": 1785669168928,
+    "stop": 1785669177105,
+    "stage": "finished",
+    "description": "Проверка открытия бокового меню и перехода в раздел 'Новости'",
+    "descriptionHtml": null,
+    "status": "passed",
+    "statusDetails": null,
+    "steps": [
+    ],
+    "attachments": [
+    ],
+    "parameters": [
+    ],
+    "uuid": "72a9e883-1f01-49d9-9131-5f37974f77b8",
+    "historyId": "23fad4ccb3f8fcf349284f04a36002cb",
+    "fullName": "ru.iteco.fmhandroid.test.NavigationTest.sideMenuNavigation",
+    "labels": [
+        {
+            "name": "package",
+            "value": "ru.iteco.fmhandroid.test"
+        },
+        {
+            "name": "testClass",
+            "value": "ru.iteco.fmhandroid.test.NavigationTest"
+        },
+        {
+            "name": "testMethod",
+            "value": "sideMenuNavigation"
+        },
+        {
+            "name": "suite",
+            "value": "ru.iteco.fmhandroid.test.NavigationTest"
+        },
+        {
+            "name": "host",
+            "value": "localhost"
+        },
+        {
+            "name": "thread",
+            "value": "Instr: io.qameta.allure.android.runners.AllureAndroidJUnitRunner(953)"
+        },
+        {
+            "name": "framework",
+            "value": "junit4"
+        },
+        {
+            "name": "language",
+            "value": "kotlin"
+        },
+        {
+            "name": "story",
+            "value": "Боковое меню"
+        },
+        {
+            "name": "feature",
+            "value": "Навигация"
+        }
+    ]
+}

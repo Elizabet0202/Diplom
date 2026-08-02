@@ -1,0 +1,61 @@
+{
+    "name": "authorizationWithInvalidPassword",
+    "start": 1785669035957,
+    "stop": 1785669041907,
+    "stage": "finished",
+    "description": "Проверка отображения ошибки при вводе неверного пароля",
+    "descriptionHtml": null,
+    "status": "passed",
+    "statusDetails": null,
+    "steps": [
+    ],
+    "attachments": [
+    ],
+    "parameters": [
+    ],
+    "uuid": "56838d1c-9690-4c5c-a5db-ade1f7cbb327",
+    "historyId": "75b5692514f9bd1f844c7a91950bfd8e",
+    "fullName": "ru.iteco.fmhandroid.test.AuthorizationTest.authorizationWithInvalidPassword",
+    "labels": [
+        {
+            "name": "package",
+            "value": "ru.iteco.fmhandroid.test"
+        },
+        {
+            "name": "testClass",
+            "value": "ru.iteco.fmhandroid.test.AuthorizationTest"
+        },
+        {
+            "name": "testMethod",
+            "value": "authorizationWithInvalidPassword"
+        },
+        {
+            "name": "suite",
+            "value": "ru.iteco.fmhandroid.test.AuthorizationTest"
+        },
+        {
+            "name": "host",
+            "value": "localhost"
+        },
+        {
+            "name": "thread",
+            "value": "Instr: io.qameta.allure.android.runners.AllureAndroidJUnitRunner(903)"
+        },
+        {
+            "name": "framework",
+            "value": "junit4"
+        },
+        {
+            "name": "language",
+            "value": "kotlin"
+        },
+        {
+            "name": "story",
+            "value": "Вход в приложение"
+        },
+        {
+            "name": "feature",
+            "value": "Авторизация"
+        }
+    ]
+}

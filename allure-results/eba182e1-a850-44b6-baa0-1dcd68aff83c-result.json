@@ -1,0 +1,61 @@
+{
+    "name": "createNews",
+    "start": 1785669256766,
+    "stop": 1785669270636,
+    "stage": "finished",
+    "description": "Проверка создания новой новости",
+    "descriptionHtml": null,
+    "status": "passed",
+    "statusDetails": null,
+    "steps": [
+    ],
+    "attachments": [
+    ],
+    "parameters": [
+    ],
+    "uuid": "eba182e1-a850-44b6-baa0-1dcd68aff83c",
+    "historyId": "381cfe648d5e58340ec5d7398ed7dc5e",
+    "fullName": "ru.iteco.fmhandroid.test.NewsTest.createNews",
+    "labels": [
+        {
+            "name": "package",
+            "value": "ru.iteco.fmhandroid.test"
+        },
+        {
+            "name": "testClass",
+            "value": "ru.iteco.fmhandroid.test.NewsTest"
+        },
+        {
+            "name": "testMethod",
+            "value": "createNews"
+        },
+        {
+            "name": "suite",
+            "value": "ru.iteco.fmhandroid.test.NewsTest"
+        },
+        {
+            "name": "host",
+            "value": "localhost"
+        },
+        {
+            "name": "thread",
+            "value": "Instr: io.qameta.allure.android.runners.AllureAndroidJUnitRunner(1023)"
+        },
+        {
+            "name": "framework",
+            "value": "junit4"
+        },
+        {
+            "name": "language",
+            "value": "kotlin"
+        },
+        {
+            "name": "story",
+            "value": "Управление новостями"
+        },
+        {
+            "name": "feature",
+            "value": "Новости"
+        }
+    ]
+}

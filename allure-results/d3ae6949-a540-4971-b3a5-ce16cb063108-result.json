@@ -1,0 +1,61 @@
+{
+    "name": "openNewsList",
+    "start": 1785669199672,
+    "stop": 1785669207412,
+    "stage": "finished",
+    "description": "Проверка открытия раздела 'Новости'",
+    "descriptionHtml": null,
+    "status": "passed",
+    "statusDetails": null,
+    "steps": [
+    ],
+    "attachments": [
+    ],
+    "parameters": [
+    ],
+    "uuid": "d3ae6949-a540-4971-b3a5-ce16cb063108",
+    "historyId": "88d09e59a9769b5f33684a4660230f30",
+    "fullName": "ru.iteco.fmhandroid.test.NewsTest.openNewsList",
+    "labels": [
+        {
+            "name": "package",
+            "value": "ru.iteco.fmhandroid.test"
+        },
+        {
+            "name": "testClass",
+            "value": "ru.iteco.fmhandroid.test.NewsTest"
+        },
+        {
+            "name": "testMethod",
+            "value": "openNewsList"
+        },
+        {
+            "name": "suite",
+            "value": "ru.iteco.fmhandroid.test.NewsTest"
+        },
+        {
+            "name": "host",
+            "value": "localhost"
+        },
+        {
+            "name": "thread",
+            "value": "Instr: io.qameta.allure.android.runners.AllureAndroidJUnitRunner(973)"
+        },
+        {
+            "name": "framework",
+            "value": "junit4"
+        },
+        {
+            "name": "language",
+            "value": "kotlin"
+        },
+        {
+            "name": "story",
+            "value": "Просмотр новостей"
+        },
+        {
+            "name": "feature",
+            "value": "Новости"
+        }
+    ]
+}

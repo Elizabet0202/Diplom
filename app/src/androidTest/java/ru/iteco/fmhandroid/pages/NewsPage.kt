@@ -16,6 +16,8 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.test.espresso.contrib.RecyclerViewActions
 import androidx.test.espresso.matcher.ViewMatchers.hasDescendant
 import androidx.test.espresso.matcher.RootMatchers.isPlatformPopup
+import androidx.test.espresso.assertion.ViewAssertions.doesNotExist
+import androidx.test.espresso.matcher.ViewMatchers.isDescendantOfA
 
 class NewsPage {
 
@@ -197,5 +199,49 @@ class NewsPage {
 
         onView(createdNewsTitle)
             .check(matches(isDisplayed()))
+    }
+    fun deleteNewsByTitle(title: String) {
+        val targetNewsCard = allOf(
+            withId(R.id.news_item_material_card_view),
+            hasDescendant(
+                allOf(
+                    withId(R.id.news_item_title_text_view),
+                    withText(title)
+                )
+            )
+        )
+
+        // Прокручиваем RecyclerView до нужной карточки.
+        onView(withId(R.id.news_list_recycler_view))
+            .perform(
+                RecyclerViewActions.scrollTo<RecyclerView.ViewHolder>(
+                    targetNewsCard
+                )
+            )
+
+        // Нажимаем корзину только внутри карточки нужной новости.
+        onView(
+            allOf(
+                withId(R.id.delete_news_item_image_view),
+                isDescendantOfA(targetNewsCard)
+            )
+        ).perform(click())
+
+        // Подтверждаем удаление в диалоге.
+        waitForView(withId(android.R.id.button1))
+
+        onView(withId(android.R.id.button1))
+            .check(matches(isDisplayed()))
+            .perform(click())
+    }
+
+    fun checkNewsDeleted(title: String) {
+        val deletedNewsTitle = allOf(
+            withId(R.id.news_item_title_text_view),
+            withText(title)
+        )
+
+        onView(deletedNewsTitle)
+            .check(doesNotExist())
     }
 }
