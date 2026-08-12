@@ -9,13 +9,14 @@ import io.qameta.allure.kotlin.Story
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
+import ru.iteco.fmhandroid.dto.NewsData
 import ru.iteco.fmhandroid.steps.AuthorizationSteps
 import ru.iteco.fmhandroid.steps.NewsSteps
 import ru.iteco.fmhandroid.ui.AppActivity
 
+@RunWith(AllureAndroidJUnit4::class)
 @LargeTest
 @Feature("Новости")
-@RunWith(AllureAndroidJUnit4::class)
 class NewsTest {
 
     @get:Rule
@@ -25,10 +26,9 @@ class NewsTest {
     private val newsSteps = NewsSteps()
 
     @Story("Просмотр новостей")
-    @Description("Проверка открытия раздела 'Новости'")
+    @Description("Проверка открытия списка новостей")
     @Test
     fun openNewsList() {
-
         authorizationSteps.loginWithValidCredentials()
         authorizationSteps.checkSuccessfulAuthorization()
 
@@ -40,7 +40,6 @@ class NewsTest {
     @Description("Проверка раскрытия первой новости")
     @Test
     fun expandFirstNews() {
-
         authorizationSteps.loginWithValidCredentials()
         authorizationSteps.checkSuccessfulAuthorization()
 
@@ -55,9 +54,8 @@ class NewsTest {
     @Description("Проверка создания новой новости")
     @Test
     fun createNews() {
-
-        val uniqueNewsTitle =
-            "Auto test news ${System.currentTimeMillis()}"
+        val newsData = NewsData.createNews
+        val uniqueNewsTitle = NewsData.uniqueCreateTitle()
 
         authorizationSteps.loginWithValidCredentials()
         authorizationSteps.checkSuccessfulAuthorization()
@@ -69,21 +67,20 @@ class NewsTest {
         newsSteps.openCreateNewsScreen()
 
         newsSteps.createNews(
-            category = "Объявление",
+            category = newsData.category,
             title = uniqueNewsTitle,
-            description = "News created by automated UI test"
+            description = newsData.description
         )
 
         newsSteps.checkNewsCreated(uniqueNewsTitle)
     }
 
     @Story("Управление новостями")
-    @Description("Проверка удаления новости")
+    @Description("Проверка удаления созданной новости")
     @Test
     fun deleteNews() {
-
-        val uniqueNewsTitle =
-            "News for deletion ${System.currentTimeMillis()}"
+        val newsData = NewsData.deleteNews
+        val uniqueNewsTitle = NewsData.uniqueDeleteTitle()
 
         authorizationSteps.loginWithValidCredentials()
         authorizationSteps.checkSuccessfulAuthorization()
@@ -95,9 +92,9 @@ class NewsTest {
         newsSteps.openCreateNewsScreen()
 
         newsSteps.createNews(
-            category = "Объявление",
+            category = newsData.category,
             title = uniqueNewsTitle,
-            description = "News created for deletion test"
+            description = newsData.description
         )
 
         newsSteps.checkNewsCreated(uniqueNewsTitle)

@@ -1,14 +1,15 @@
 package ru.iteco.fmhandroid.test
 
 import androidx.test.ext.junit.rules.ActivityScenarioRule
-import io.qameta.allure.android.runners.AllureAndroidJUnit4
 import androidx.test.filters.LargeTest
+import io.qameta.allure.android.runners.AllureAndroidJUnit4
 import io.qameta.allure.kotlin.Description
 import io.qameta.allure.kotlin.Feature
 import io.qameta.allure.kotlin.Story
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
+import ru.iteco.fmhandroid.dto.AuthorizationData
 import ru.iteco.fmhandroid.steps.AuthorizationSteps
 import ru.iteco.fmhandroid.ui.AppActivity
 
@@ -26,7 +27,8 @@ class AuthorizationTest {
     @Description("Проверка успешной авторизации с корректными учетными данными")
     @Test
     fun successfulAuthorization() {
-        authorizationSteps.loginWithValidCredentials()
+        authorizationSteps.login(AuthorizationData.validUser)
+
         authorizationSteps.checkSuccessfulAuthorization()
     }
 
@@ -34,10 +36,7 @@ class AuthorizationTest {
     @Description("Проверка отображения ошибки при вводе неверного логина")
     @Test
     fun authorizationWithInvalidLogin() {
-        authorizationSteps.login(
-            login = "wrongLogin",
-            password = "password2"
-        )
+        authorizationSteps.login(AuthorizationData.invalidLoginUser)
 
         authorizationSteps.checkFailedAuthorization()
     }
@@ -46,10 +45,7 @@ class AuthorizationTest {
     @Description("Проверка отображения ошибки при вводе неверного пароля")
     @Test
     fun authorizationWithInvalidPassword() {
-        authorizationSteps.login(
-            login = "login2",
-            password = "wrongPassword"
-        )
+        authorizationSteps.login(AuthorizationData.invalidPasswordUser)
 
         authorizationSteps.checkFailedAuthorization()
     }
@@ -58,10 +54,7 @@ class AuthorizationTest {
     @Description("Проверка отображения ошибки при авторизации с пустыми полями")
     @Test
     fun authorizationWithEmptyFields() {
-        authorizationSteps.login(
-            login = "",
-            password = ""
-        )
+        authorizationSteps.login(AuthorizationData.emptyCredentials)
 
         authorizationSteps.checkFailedAuthorization()
     }
@@ -70,7 +63,7 @@ class AuthorizationTest {
     @Description("Проверка успешного выхода пользователя из приложения")
     @Test
     fun logoutFromAccount() {
-        authorizationSteps.loginWithValidCredentials()
+        authorizationSteps.login(AuthorizationData.validUser)
 
         authorizationSteps.checkSuccessfulAuthorization()
 

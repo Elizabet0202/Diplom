@@ -18,7 +18,7 @@ import androidx.test.espresso.matcher.ViewMatchers.hasDescendant
 import androidx.test.espresso.matcher.RootMatchers.isPlatformPopup
 import androidx.test.espresso.assertion.ViewAssertions.doesNotExist
 import androidx.test.espresso.matcher.ViewMatchers.isDescendantOfA
-
+import ru.iteco.fmhandroid.utils.waitForViewToDisappear
 class NewsPage {
 
     // Главный экран и меню.
@@ -241,7 +241,6 @@ class NewsPage {
             withText(title)
         )
 
-        onView(deletedNewsTitle)
-            .check(doesNotExist())
+        waitForViewToDisappear(deletedNewsTitle)
     }
 }

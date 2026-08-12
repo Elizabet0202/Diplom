@@ -1,26 +1,25 @@
 package ru.iteco.fmhandroid.steps
 
 import io.qameta.allure.kotlin.Step
+import ru.iteco.fmhandroid.dto.AuthorizationCredentials
+import ru.iteco.fmhandroid.dto.AuthorizationData
 import ru.iteco.fmhandroid.pages.AuthorizationPage
 
 class AuthorizationSteps {
 
     private val authorizationPage = AuthorizationPage()
 
-    @Step("Авторизоваться с логином: {login}")
-    fun login(login: String, password: String) {
+    @Step("Выполнить авторизацию")
+    fun login(credentials: AuthorizationCredentials) {
         authorizationPage.checkAuthorizationScreen()
-        authorizationPage.enterLogin(login)
-        authorizationPage.enterPassword(password)
+        authorizationPage.enterLogin(credentials.login)
+        authorizationPage.enterPassword(credentials.password)
         authorizationPage.clickEnterButton()
     }
 
     @Step("Авторизоваться с корректными учетными данными")
     fun loginWithValidCredentials() {
-        login(
-            login = VALID_LOGIN,
-            password = VALID_PASSWORD
-        )
+        login(AuthorizationData.validUser)
     }
 
     @Step("Проверить успешную авторизацию")
@@ -41,10 +40,5 @@ class AuthorizationSteps {
     @Step("Проверить открытие экрана авторизации")
     fun checkLogoutSuccessful() {
         authorizationPage.checkAuthorizationScreenIsOpened()
-    }
-
-    companion object {
-        private const val VALID_LOGIN = "login2"
-        private const val VALID_PASSWORD = "password2"
     }
 }
